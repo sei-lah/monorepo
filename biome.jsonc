@@ -11,5 +11,16 @@
       "!**/*.d.ts"
     ]
   },
-  "extends": ["@mkvlrn/config/biome"]
+  "extends": ["@mkvlrn/config/biome"],
+  "overrides": [
+    {
+      "includes": ["**/apps/bot/**/*"],
+      "linter": {
+        "rules": {
+          // ok for bot
+          "correctness": { "noNodejsModules": "off" }
+        }
+      }
+    }
+  ]
 }
