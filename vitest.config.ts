@@ -5,6 +5,7 @@ export default defineConfig({
     projects: ["apps/*", "pkg/*"],
     reporters: ["tree"],
     watch: false,
+    passWithNoTests: true,
     coverage: {
       exclude: ["**/*.{test,spec}.ts", "**/*.config.ts"],
     },
