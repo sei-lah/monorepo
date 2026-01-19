@@ -1,4 +1,4 @@
-import { type ChatInputCommandInteraction, SlashCommandBuilder } from "discord.js";
+import { type ChatInputCommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
 import { createBotCommand } from "#core/commands";
 import { roll } from "#util/rolldice";
 
@@ -14,7 +14,8 @@ const data = new SlashCommandBuilder()
 
 async function execute(interaction: ChatInputCommandInteraction): Promise<void> {
   const xp = interaction.options.getString("xp", true);
-  const result = roll(xp);
+  const hidden = xp.endsWith("!");
+  const result = roll(xp.replace("!", ""));
   if (result === false) {
     await interaction.reply({
       content: `Expressao invalida: ${xp}`,
@@ -22,8 +23,11 @@ async function execute(interaction: ChatInputCommandInteraction): Promise<void> 
     });
     return;
   }
-
-  await interaction.reply(`Seu ${xp} = ${result.total} (${result.values.join(", ")})`);
+  const window = new EmbedBuilder()
+    .setColor("DarkPurple")
+    .setTitle(`🎲 ${xp}`)
+    .setDescription(`<@${interaction.user.id}> rolou ${result.total} (${result.values.join(",")})`);
+  await interaction.reply({ embeds: [window], flags: hidden ? ["Ephemeral"] : [] });
 }
 
 createBotCommand({ data, execute });
