@@ -1,0 +1,26 @@
+{
+  "name": "@apps/backend",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "24"
+  },
+  "imports": {
+    "#*": "./src/*.ts"
+  },
+  "scripts": {
+    "dev": "node --watch src/main.ts",
+    "start": "node src/main.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@mkvlrn/config": "^3.0.6",
+    "@types/node": "^25.0.9",
+    "tsc-files": "^1.1.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.17"
+  },
+  "dependencies": {
+    "@mkvlrn/result": "^5.0.4"
+  }
+}
