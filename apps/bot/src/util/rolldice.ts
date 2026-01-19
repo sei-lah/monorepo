@@ -10,7 +10,6 @@ export const maxDice = 10;
 export const diceFaces = [3, 4, 6, 8, 10, 12, 20];
 
 export function roll(xp: string): RollResult | false {
-  ///^(10|[1-9])d(3|4|6|8|10|12|20)$/gm
   const regex = new RegExp(`^(${maxDice}|[${minDice}-${maxDice - 1}])d(${diceFaces.join("|")})$`);
   const match = xp.match(regex);
   if (!match) {
