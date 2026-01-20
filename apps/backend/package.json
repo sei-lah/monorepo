@@ -11,16 +11,23 @@
   "scripts": {
     "dev": "node --watch src/main.ts",
     "start": "node src/main.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:generate": "pnpm drizzle-kit generate",
+    "db:migrate": "pnpm drizzle-kit migrate"
   },
   "devDependencies": {
     "@mkvlrn/config": "^3.0.6",
     "@types/node": "^25.0.9",
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8",
     "tsc-files": "^1.1.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.17"
   },
   "dependencies": {
-    "@mkvlrn/result": "^5.0.4"
+    "@mkvlrn/result": "^5.0.4",
+    "drizzle-orm": "^0.45.1",
+    "pg": "^8.17.2",
+    "varlock": "^0.1.5"
   }
 }
