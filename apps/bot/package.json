@@ -24,6 +24,7 @@
     "vitest": "^4.0.17"
   },
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.88",
     "discord.js": "^14.25.1",
     "pino": "^10.2.0",
     "varlock": "^0.1.5"

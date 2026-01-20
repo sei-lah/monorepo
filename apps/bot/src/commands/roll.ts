@@ -1,5 +1,11 @@
-import { type ChatInputCommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import {
+  AttachmentBuilder,
+  type ChatInputCommandInteraction,
+  EmbedBuilder,
+  SlashCommandBuilder,
+} from "discord.js";
 import { createBotCommand } from "#core/commands";
+import { imgGenerator } from "#util/imggen";
 import { roll } from "#util/rolldice";
 
 const data = new SlashCommandBuilder()
@@ -23,11 +29,17 @@ async function execute(interaction: ChatInputCommandInteraction): Promise<void> 
     });
     return;
   }
+  const img = imgGenerator(result);
+  const att = new AttachmentBuilder(img, { name: "result.png" });
   const window = new EmbedBuilder()
     .setColor("DarkPurple")
     .setTitle(`🎲 ${xp}`)
-    .setDescription(`<@${interaction.user.id}> rolou ${result.total} (${result.values.join(",")})`);
-  await interaction.reply({ embeds: [window], flags: hidden ? ["Ephemeral"] : [] });
+    .setImage("attachment://result.png");
+  await interaction.reply({
+    embeds: [window],
+    files: [att],
+    flags: hidden ? ["Ephemeral"] : [],
+  });
 }
 
 createBotCommand({ data, execute });
