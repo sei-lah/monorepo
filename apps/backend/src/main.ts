@@ -1,9 +1,18 @@
-import { getDb } from "@pkg/db/connection";
-import { campaignTable } from "@pkg/db/schemas/campaign";
-import { ENV } from "varlock";
-import "varlock/auto-load";
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
 
-const db = getDb(ENV.DATABASE_URL);
-const result = await db.select().from(campaignTable);
+const app = new Hono();
+app.get("/", (c) => c.text("Hello Node.js!"));
 
-console.dir(result);
+// app.get("/daniel", (c) => {
+//   const test = true;
+//   return c.text(`Hello Daniel, ${test}`);
+// });
+
+// app.post("/yolo", async (c) => {
+//   const body = await c.req.json();
+//   console.dir(body);
+//   return c.json({ ok: true });
+// });
+
+serve(app, (info) => console.log(`server up @${info.port}`));
