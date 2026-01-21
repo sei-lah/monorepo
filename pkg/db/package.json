@@ -1,5 +1,5 @@
 {
-  "name": "@apps/backend",
+  "name": "@pkg/db",
   "version": "1.0.0",
   "type": "module",
   "engines": {
@@ -8,23 +8,29 @@
   "imports": {
     "#*": "./src/*.ts"
   },
+  "exports": {
+    "./*": {
+      "types": "./src/*.ts",
+      "default": "./src/*.ts"
+    }
+  },
   "scripts": {
-    "dev": "node --watch src/main.ts",
-    "start": "node src/main.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "devDependencies": {
     "@mkvlrn/config": "^3.0.6",
     "@types/node": "^25.0.9",
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8",
     "tsc-files": "^1.1.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.17"
   },
   "dependencies": {
-    "@hono/node-server": "^1.19.9",
-    "@mkvlrn/result": "^5.0.4",
-    "@pkg/db": "workspace:*",
-    "hono": "^4.11.4",
+    "drizzle-orm": "^0.45.1",
+    "pg": "^8.17.2",
     "varlock": "^0.1.5"
   }
 }
