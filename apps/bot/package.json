@@ -9,9 +9,9 @@
     "#*": "./src/*.ts"
   },
   "scripts": {
-    "register": "node ./src/registration.ts",
-    "unregister": "node ./src/registration.ts",
-    "dev": "node --watch src/main.ts | pino-pretty",
+    "register": "node --env-file=.env ./src/registration.ts",
+    "unregister": "node --env-file=.env ./src/registration.ts",
+    "dev": "node --env-file=.env --watch src/main.ts | pino-pretty",
     "start": "node src/main.ts",
     "typecheck": "tsc --noEmit"
   },
@@ -26,7 +26,7 @@
   "dependencies": {
     "@napi-rs/canvas": "^0.1.88",
     "discord.js": "^14.25.1",
-    "pino": "^10.2.0",
-    "varlock": "^0.1.5"
+    "envalid": "^8.1.1",
+    "pino": "^10.2.0"
   }
 }

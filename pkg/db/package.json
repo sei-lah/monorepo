@@ -24,9 +24,9 @@
     "@types/node": "^25.0.9",
     "@types/pg": "^8.16.0",
     "drizzle-kit": "^0.31.8",
+    "envalid": "^8.1.1",
     "tsc-files": "^1.1.4",
     "typescript": "^5.9.3",
-    "varlock": "^0.1.5",
     "vitest": "^4.0.17"
   },
   "dependencies": {

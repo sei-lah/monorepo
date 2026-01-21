@@ -1,7 +1,6 @@
-import "varlock/auto-load";
 import { getDb } from "@pkg/db/connection";
 import { campaignTable } from "@pkg/db/schemas/campaign";
-import { ENV } from "varlock";
+import { ENV } from "#env";
 
 const db = getDb(ENV.DATABASE_URL);
 const result = await db.select().from(campaignTable);

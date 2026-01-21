@@ -1,6 +1,5 @@
-import "varlock/auto-load";
 import { defineConfig } from "drizzle-kit";
-import { ENV } from "varlock";
+import { ENV } from "./env.ts";
 
 export default defineConfig({
   out: "./src/migrations",
