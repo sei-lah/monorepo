@@ -1,0 +1,23 @@
+meta {
+  name: criarção de campanha
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/campaigns
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "Orcs e Paraquedas",
+    "discord_channel_id": "f432f209n209"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

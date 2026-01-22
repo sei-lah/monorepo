@@ -9,7 +9,8 @@
       "!**/build/**/*",
       "!**/coverage/**/*",
       "!**/*.d.ts",
-      "!**/migrations/*"
+      "!**/migrations/*",
+      "!**/http/*"
     ]
   },
   "extends": ["@mkvlrn/config/biome"],
