@@ -17,7 +17,7 @@ campaginsRoute.post("", sValidator("json", CreateCampaignSchema), async (ctx) =>
       .insert(campaignTable)
       .values({ name: content.name, discord_channel_id: content.discord_channel_id });
     return ctx.json({ ok: true });
-  } catch (err) {
+  } catch (_err) {
     ctx.status(502);
     return ctx.json({ ok: false, message: "erro de comunicação com banco de dados" });
   }
@@ -26,7 +26,7 @@ campaginsRoute.get("", async (ctx) => {
   try {
     const campaigns = await db.select().from(campaignTable);
     return ctx.json(campaigns);
-  } catch (err) {
+  } catch (_err) {
     ctx.status(502);
     return ctx.json({ ok: false, message: "erro de comunicação com banco de dados" });
   }
@@ -41,7 +41,7 @@ campaginsRoute.get(":id", async (ctx) => {
       return ctx.json({ ok: false });
     }
     return ctx.json(campaign);
-  } catch (err) {
+  } catch (_err) {
     ctx.status(502);
     return ctx.json({ ok: false, message: "erro de comunicação com banco de dados" });
   }
@@ -69,7 +69,7 @@ campaginsRoute.patch(":id", sValidator("json", UpdateCampaignSchema), async (ctx
     }
     await db.update(campaignTable).set({ active: update.active }).where(eq(campaignTable.id, id));
     return ctx.json({ ok: true });
-  } catch (err) {
+  } catch (_err) {
     ctx.status(502);
     return ctx.json({ ok: false, message: "erro de comunicação com banco de dados" });
   }
