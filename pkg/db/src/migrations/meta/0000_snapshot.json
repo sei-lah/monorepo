@@ -1,5 +1,5 @@
 {
-  "id": "6628adb3-5654-41e5-9815-c17dd82b7378",
+  "id": "102c1bb7-9ae3-4881-8f11-00790c03dc70",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -10,30 +10,13 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "integer",
+          "type": "text",
           "primaryKey": true,
-          "notNull": true,
-          "identity": {
-            "type": "always",
-            "name": "campaigns_id_seq",
-            "schema": "public",
-            "increment": "1",
-            "startWith": "1",
-            "minValue": "1",
-            "maxValue": "2147483647",
-            "cache": "1",
-            "cycle": false
-          }
+          "notNull": true
         },
         "name": {
           "name": "name",
           "type": "varchar(80)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "discord_channel_id": {
-          "name": "discord_channel_id",
-          "type": "varchar(255)",
           "primaryKey": false,
           "notNull": true
         },

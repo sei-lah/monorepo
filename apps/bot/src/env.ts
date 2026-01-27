@@ -9,4 +9,6 @@ export const ENV = cleanEnv(process.env, {
     default: "trace",
   }),
   DEV_SERVER: str(),
+  URL_API: str(),
+  CATEGORY: str({ default: "Campanhas de RPG" }),
 });
