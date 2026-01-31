@@ -11,6 +11,7 @@ export const ENV = cleanEnv(process.env, {
   DEV_SERVER: str(),
   CATEGORY: str({ default: "Campanhas de RPG" }),
   URL_API: url({ default: "http://localhost:3000" }),
-  URL_SHEET: url({ default: "https://localhost:4000" }),
-  SHEET_URL_TIMEOUT: num({ default: 30 }),
+  URL_SHEET: url({ default: "http://localhost:4000" }),
+  SHEET_TOKEN_EXPIRATION: num({ default: 30 }),
+  SHEET_TOKEN_SECRET: str({ default: "secret" }),
 });
