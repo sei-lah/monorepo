@@ -16,7 +16,7 @@
   "extends": ["@mkvlrn/config/biome"],
   "overrides": [
     {
-      "includes": ["**/apps/bot/**/*", "**/env.ts"],
+      "includes": ["**/apps/bot/**/*", "**/pkg/utils/**/*", "**/env.ts"],
       "linter": {
         "rules": {
           // ok for bot
