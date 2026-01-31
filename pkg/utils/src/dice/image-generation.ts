@@ -1,5 +1,5 @@
 import { createCanvas, type SKRSContext2D } from "@napi-rs/canvas";
-import type { RollResult } from "./rolldice.ts";
+import type { RollResult } from "#dice/roll";
 
 const boxSize = 80;
 const pad = 10;

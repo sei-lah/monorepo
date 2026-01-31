@@ -1,3 +1,5 @@
+import { imgGenerator } from "@pkg/utils/dice/image-generation";
+import { roll } from "@pkg/utils/dice/roll";
 import {
   AttachmentBuilder,
   type ChatInputCommandInteraction,
@@ -5,8 +7,6 @@ import {
   SlashCommandBuilder,
 } from "discord.js";
 import { createBotCommand } from "#core/commands";
-import { imgGenerator } from "#util/imggen";
-import { roll } from "#util/rolldice";
 
 const data = new SlashCommandBuilder()
   .setName("roll")

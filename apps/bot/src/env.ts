@@ -9,6 +9,6 @@ export const ENV = cleanEnv(process.env, {
     default: "trace",
   }),
   DEV_SERVER: str(),
-  URL_API: str(),
+  URL_API: str({ default: "http://localhsot:3000" }),
   CATEGORY: str({ default: "Campanhas de RPG" }),
 });

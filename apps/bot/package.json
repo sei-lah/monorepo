@@ -24,7 +24,7 @@
     "vitest": "^4.0.17"
   },
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.88",
+    "@pkg/utils": "workspace:*",
     "discord.js": "^14.25.1",
     "envalid": "^8.1.1",
     "pino": "^10.2.0"
