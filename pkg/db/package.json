@@ -20,19 +20,19 @@
     "db:migrate": "drizzle-kit migrate"
   },
   "devDependencies": {
-    "@mkvlrn/config": "^3.0.6",
-    "@types/node": "^25.0.9",
+    "@mkvlrn/config": "^3.0.7",
+    "@types/node": "^25.1.0",
     "@types/pg": "^8.16.0",
     "drizzle-kit": "^0.31.8",
     "envalid": "^8.1.1",
     "tsc-files": "^1.1.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.1",
     "drizzle-zod": "^0.8.3",
-    "pg": "^8.17.2",
-    "zod": "^4.3.5"
+    "pg": "^8.18.0",
+    "zod": "^4.3.6"
   }
 }

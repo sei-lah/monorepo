@@ -15,14 +15,14 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@mkvlrn/config": "^3.0.6",
+    "@mkvlrn/config": "^3.0.7",
     "@tailwindcss/postcss": "^4.1.18",
-    "@tanstack/router-plugin": "^1.150.0",
+    "@tanstack/router-plugin": "^1.157.17",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.1",
-    "@types/node": "^25.0.9",
-    "@types/react": "^19.2.8",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.1.0",
+    "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
     "cross-env": "^10.1.0",
@@ -32,12 +32,12 @@
     "tsc-files": "^1.1.4",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.90.17",
-    "@tanstack/react-router": "^1.150.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "@tanstack/react-query": "^5.90.20",
+    "@tanstack/react-router": "^1.157.17",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }

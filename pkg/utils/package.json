@@ -18,13 +18,13 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@mkvlrn/config": "^3.0.6",
-    "@types/node": "^25.0.9",
+    "@mkvlrn/config": "^3.0.7",
+    "@types/node": "^25.1.0",
     "tsc-files": "^1.1.4",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@napi-rs/canvas": "^0.1.88"
+    "@napi-rs/canvas": "^0.1.89"
   }
 }
