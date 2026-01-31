@@ -10,17 +10,27 @@
       "!**/coverage/**/*",
       "!**/*.d.ts",
       "!**/migrations/*",
-      "!**/http/*"
+      "!**/http/*",
+      "!**/generated/**/*"
     ]
   },
   "extends": ["@mkvlrn/config/biome"],
   "overrides": [
     {
-      "includes": ["**/apps/bot/**/*", "**/env.ts"],
+      "includes": ["**/apps/bot/**/*", "**/pkg/utils/**/*", "**/env.ts"],
       "linter": {
         "rules": {
           // ok for bot
           "correctness": { "noNodejsModules": "off" }
+        }
+      }
+    },
+    {
+      "includes": ["**/sheets/src/routes/**/*"],
+      "linter": {
+        "rules": {
+          // tan stack routes dont export components
+          "style": { "useComponentExportOnlyModules": "off" }
         }
       }
     }

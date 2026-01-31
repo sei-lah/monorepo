@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --foreground: #daf7dc;
+  --background: #2f4858;
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  --animate-fade-in: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

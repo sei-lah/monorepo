@@ -1,5 +1,5 @@
 import process from "node:process";
-import { cleanEnv, str } from "envalid";
+import { cleanEnv, num, str, url } from "envalid";
 
 export const ENV = cleanEnv(process.env, {
   DISCORD_CLIENT_ID: str(),
@@ -9,6 +9,8 @@ export const ENV = cleanEnv(process.env, {
     default: "trace",
   }),
   DEV_SERVER: str(),
-  URL_API: str(),
   CATEGORY: str({ default: "Campanhas de RPG" }),
+  URL_API: url({ default: "http://localhost:3000" }),
+  URL_SHEET: url({ default: "https://localhost:4000" }),
+  SHEET_URL_TIMEOUT: num({ default: 30 }),
 });
