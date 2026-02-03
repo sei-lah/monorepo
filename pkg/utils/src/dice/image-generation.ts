@@ -39,9 +39,9 @@ function circle(ctx: SKRSContext2D, x: number, y: number, value: string) {
 }
 
 export function imgGenerator(result: RollResult): Buffer {
-  const variacao = !result.variation;
+  const variacao = result.variation;
 
-  const qntDados = result.values.length + (variacao ? 1 : 2);
+  const qntDados = result.values.length + (variacao ? 2 : 1);
 
   const width = qntDados * (boxSize + pad * 2);
   const height = boxSize + pad * 2;
@@ -62,7 +62,7 @@ export function imgGenerator(result: RollResult): Buffer {
     square(ctx, x, pad, result.variation.toString(), "#009719");
   }
 
-  if (result.variation) {
+  if (variacao) {
     const x = (result.values.length + 1) * (boxSize + pad * 2);
     circle(ctx, x, pad, result.total.toString());
     return canvas.toBuffer("image/png");
