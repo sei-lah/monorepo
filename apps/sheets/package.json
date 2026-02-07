@@ -35,8 +35,10 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
+    "@pkg/utils": "workspace:*",
     "@tanstack/react-query": "^5.90.20",
     "@tanstack/react-router": "^1.158.4",
+    "motion": "^12.33.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   }
