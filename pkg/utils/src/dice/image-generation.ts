@@ -59,7 +59,7 @@ export function imgGenerator(result: RollResult): Buffer {
     square(ctx, x, pad, result.variation.toString(), "#810000");
   } else if (result.variation > 0) {
     const x = result.values.length * (boxSize + pad * 2);
-    square(ctx, x, pad, result.variation.toString(), "#009719");
+    square(ctx, x, pad, `+${result.variation.toString()}`, "#009719");
   }
 
   if (variacao) {
