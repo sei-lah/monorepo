@@ -2,8 +2,17 @@ import { roll } from "@pkg/utils/dice/roll";
 import { Reorder } from "motion/react";
 import { useState } from "react";
 
+interface RollItem {
+  id: string;
+  value: number;
+}
+
+function createItems(values: number[]): RollItem[] {
+  return values.map((v) => ({ id: crypto.randomUUID(), value: v }));
+}
+
 export function Atributos() {
-  const [items, setItems] = useState([0, 0, 0]);
+  const [items, setItems] = useState(createItems([0, 0, 0]));
   const [rolado, setRolado] = useState(false);
 
   function rolar() {
@@ -14,8 +23,7 @@ export function Atributos() {
     if (!(r1 && r2 && r3)) {
       throw new Error("falha na criaçao de dados");
     }
-    setItems([]);
-    setItems([r1.total, r2.total, r3.total]);
+    setItems(createItems([r1.total, r2.total, r3.total]));
     setRolado(true);
   }
   return (
@@ -28,8 +36,8 @@ export function Atributos() {
         </ul>
         <Reorder.Group axis="y" onReorder={setItems} values={items}>
           {items.map((item) => (
-            <Reorder.Item key={item} value={item}>
-              {item}
+            <Reorder.Item key={item.id} value={item}>
+              {item.value}
             </Reorder.Item>
           ))}
         </Reorder.Group>
